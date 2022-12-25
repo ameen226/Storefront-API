@@ -30,19 +30,19 @@ $ CREATE DATABASE storefront_dev;
 
 `GET /products` - index all products\
 `GET /products/:productName` - show a specific product by product name\
-`POST /products` - create a product
-`DELETE /products` - delete product by product name
+`POST /products` - create a product\
+`DELETE /products` - delete product by product name\
 
-`GET /users` - index all users
-`GET /users/:username` - show a specific user by username
-`POST /users/register` - create user
-`POST /users/login` - sign in a user
-`DELETE /users` - delete a specific user by username
+`GET /users` - index all users\
+`GET /users/:username` - show a specific user by username\
+`POST /users/register` - create user\
+`POST /users/login` - sign in a user\
+`DELETE /users` - delete a specific user by username\
 
-`GET /orders` - index all orders
-`GET /orders/:userId` - index orders by user id
-`POST /orders` - create order 
-`GET /orders/complete/:username` - index copmleted orders by username   
-`DELETE /orders` - delete a specific order by order id
-`POST /orders/products` - create order with product quantity and product id
-`DELETE /orders/products` - delete order product by order product id
+`GET /orders` - index all orders\
+`GET /orders/:userId` - index orders by user id\
+`POST /orders` - create order\
+`GET /orders/complete/:username` - index copmleted orders by username\   
+`DELETE /orders` - delete a specific order by order id\
+`POST /orders/products` - create order with product quantity and product id\
+`DELETE /orders/products` - delete order product by order product id\
