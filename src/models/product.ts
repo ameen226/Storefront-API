@@ -3,7 +3,7 @@ import pool from '../database';
 
 export type Product = {
     name: String;
-    price: Number;
+    price: Number | string;
     category: String;
 }
 

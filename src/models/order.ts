@@ -3,6 +3,7 @@ import pool from '../database';
 
 
 export type Order = {
+    id: Number
     status: String,
     user_id: Number,
 }
@@ -25,7 +26,7 @@ export class OrderStore {
         }
     }
 
-    async show(userId: string): Promise<Order> {
+    async show(userId: number | string): Promise<Order> {
         try {
             const sql = 'select * from orders where user_id=$1';
             const order = await pool.query(sql, [userId]);

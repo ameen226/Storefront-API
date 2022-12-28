@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node build/server.js",
-    "test": "npm run build && npm run jasmine",
+    "test": "npm run create-test-database && db-migrate --env test up && npm run build && ENV=test jasmine && npm run drop-test-database",
+    "drop-test-database": "db-migrate db:drop storefront_test",
     "build": "npx tsc",
+    "create-test-database": "db-migrate db:create storefront_test",
+    "db-test-down": "db-migrate --env test down",
     "jasmine": "jasmine",
+    "jasmine-ts": "jasmine-ts",
     "db-migrate": "db-migrate"
   },
   "keywords": [],
@@ -30,9 +34,11 @@
     "@types/jasmine": "^4.3.1",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/pg": "^8.6.5",
+    "@types/supertest": "^2.0.12",
     "jasmine": "^4.5.0",
     "jasmine-spec-reporter": "^7.0.0",
     "jasmine-ts": "^0.4.0",
+    "supertest": "^6.3.3",
     "ts-node": "^10.9.1"
   }
 }

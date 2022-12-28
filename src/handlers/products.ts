@@ -10,19 +10,27 @@ const store = new ProductStore();
 
 const productsRoutes = (app: express.Application) => {
     app.get('/products', index);
-    app.get('/products/:id', show);
+    app.get('/products/:name', show);
     app.post('/products', create);
     app.delete('/products/:productName', deleteProduct);
 }
 
 const index = async (req: Request, res: Response) => {
-    const products = await store.index();
-    res.json(products);
+    try {
+        const products = await store.index();
+        res.json(products);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 }
 
 const show = async (req: Request, res: Response) => {
-    const product = await store.show(req.params.id);
-    res.json(product);
+    try {
+        const product = await store.show(req.params.name);
+        res.json(product);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 }
 
 const create = async (req: Request, res: Response) => {
@@ -47,9 +55,12 @@ const create = async (req: Request, res: Response) => {
     } catch (err) {
         return res.status(401).json('Access denied, invalid token');
     }
-
-    const newProduct = await store.create(product);
-    res.json(newProduct);
+    try {
+        const newProduct = await store.create(product);
+        res.json(newProduct);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 }
 
 
