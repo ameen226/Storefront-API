@@ -1,6 +1,6 @@
 # Storefront Project
 
-This api is used for imitating a storefront as we have products and users the register and sign in and also we have orders records.
+This api is used for imitating a storefront as we have products and users can register and sign in and also we have orders records.
 
 ## Usage 
 
