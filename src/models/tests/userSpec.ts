@@ -9,9 +9,9 @@ env.config();
 const store = new UserStore();
 
 const userObj = {
-    username: 'ameen266',
-    first_name: 'ameen',
-    last_name: "mohamed",
+    username: '7amada',
+    first_name: 'mohamed',
+    last_name: "khalil",
 };
 
 const userObjPass = '123456';

@@ -81,6 +81,7 @@ PORT=3000
 ENV=dev
 
 POSTGRES_HOST=localhost
+POSTGRES_PORT=5432 
 DEV_DB=storefront_dev
 TEST_DB=storefront_test
 POSTGRES_USER=postgres
